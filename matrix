@@ -43,7 +43,8 @@ public:
 
     }
 };
-/*int main()
+
+int main()
 {
     matrix A(5);
         A.Display();
@@ -53,11 +54,7 @@ public:
 
     B=A;
     B.Display();
-}
-*/
-int main()
-{
-    cout<<"Hello World";
-
+    
     return 0;
 }
+
