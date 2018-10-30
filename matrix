@@ -27,6 +27,31 @@ public:
 
         return *this;
     }
+    
+      matrix operator +(matrix b)
+        
+        {
+                for(int i=0;i<5;i++)
+                 {
+                     for(int j=0;j<5;j++)
+                     {
+                         a[i][j]+=b.a[i][j];
+                     }
+                 }
+            return *this;     
+        }
+matrix operator -(matrix b)
+        {
+            for(int i=0;i<5;i++)
+                {
+                    for(int j=0;j<5;j++)
+                        {
+                            a[i][j]-=b.a[i][j];
+                        }
+                }
+                
+            return *this;
+        }
 
     void Display()
     {
@@ -56,6 +81,31 @@ int main()
 
     B=A;
     B.Display();
+     matrix C;
+    
+    C = B + A;
+    
+    
+    
+    B.Display();
+    C.Display();
+     
+     B= A+B+C;
+     
+     B.Display();
+     
+      matrix C;
+    
+    C = B + A;
+    
+    
+    
+    B.Display();
+    C.Display();
+     
+     B= A+B+C;
+     
+     B.Display();
     
     return 0;
 }
