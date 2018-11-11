@@ -1,16 +1,133 @@
 #include <iostream>
 
 using namespace std;
-
+//                         QUESTION I
 int main()
 {
     int n=5;
     
         if(n=0)
-            cout<<"n is zero"<<"\n";
+            cout<<"n is zero"<<"\n"; 
         else
-            cout<<"n is not zero"<<"\n";
+              cout<<"n is not zero"<<"\n";
             
             cout<<"the square of n is "<< n * n<<"\n";
            
 }
+// OUTPUT
+// n is not zero
+// the square of n is  0
+// if(n==0) then the square comes out to be 25
+
+//                          QUESTION II
+int main()
+{
+    int n,k=5;
+    
+        n=(100%k ? k+1 : k-1);
+        
+        cout<<"n ="<<n<<" k = "<<k<<endl;
+        
+        
+}
+//OUTPUT
+// n = 4, k = 5 because the remainder is false condition for the conditional test
+
+
+//                          QUESTION III    
+int main()
+{
+       int list[]={2,4,-5,6,7,0,-1,6};
+       
+       bool pos = true;
+       
+       int i=0;
+       
+        while(pos&&list[i]!=0)
+            
+            pos = (list[i++]>0);
+            
+            cout<<"The final output is: "<< pos<< " for i = "<<i;
+                   
+}
+
+//OUTPUT
+// value of pos= 0 for i = 3 since value of -5 makes the boolean value p false leading the loop to terminate and 
+//hence move onto the cout statement 
+//NOTE: had the statement been list[++i] , the value of i would have been 2 instead of 3 (JUST FOR CAUTION)
+
+//                              QUESTION IV
+int main()
+{
+       int i1=-254;
+       
+       float f1=53.6456;
+       
+       int i2=8;
+       
+       cout<<"i1"<<setw(7)<<i1<<"i2"<<setw(4)<<i2;
+       cout.setf(ios::fixed,ios::floatfield);
+       cout<<setprecision(2);
+       
+        cout<<"f1"<<f1;
+        
+        cout.setf(ios::oct,ios::basefield);
+            cout<<"octal of i2"<<i2;
+            
+            
+        
+}
+//OUTPUT
+//i1       -254i2    8f153.65
+//setw for setting the spacing 
+//setprecision to round upto 2 digits
+//ios_setf is used for setting format field, here the in case of i2 the basefield is set as octal and hence i2 is displayed in
+//octal and in case of f1 it was fixed
+//we can use showbase and noshowbase too, inorder to display the base like 0x14 for int 20(hexadecimal form)
+
+//                              QUESTION V
+int main()
+{
+      string x="FROM:abcd@gmail.com";
+      
+        int colonPos=x.find(':');
+        
+        string prefix=x.substr(0,colonPos);
+        
+        string suffix=x.substr(colonPos+1);
+        
+        cout<<"-This message is from"<<suffix<<endl;
+            
+}
+//OUTPUT
+//-this message is fromabcd@gmail.com
+//
+
+//                          QUESTION VI
+int main()
+{
+      string str1("Brick house");
+      string str2("Mud house");
+      string str3("Concrete");
+      
+        if(str1.compare(6,5,str2)==0)
+                        cout<<str1<<"is same as"<<str2<<"\n";
+        else
+            cout<<str1<<"is not same as"<<str2<<"\n";
+            string newstr=str1.substr(0,5);
+            
+            newstr.append(str2);
+            
+            cout<<"New string."<<newstr<<"\n";
+            
+        newstr.replace(5,3,str3);
+                cout<<"Now New string."<<newstr<<"\n";
+            
+}
+//OUTPUT
+//  New string.BrickMud house
+//Now New string.BrickConcrete house
+
+//                          QUESTION VII
+
+    
