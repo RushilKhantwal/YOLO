@@ -1,0 +1,63 @@
+//First line of input will contain the number of test cases T.
+//For each test case, you will be given the size of array N and the size of subarray to be used K. 
+//This will be followed by the elements of the array Ai.
+
+
+
+
+#include <iostream>
+#include <deque> 
+using namespace std;
+
+
+void printKMax(int a[], int n, int k){
+     deque<int> Q(k);
+    int i;
+    for(i=0;i<k;i++){
+ 
+        while(!Q.empty() &&a[i]>a[Q.back()]){
+            Q.pop_back();
+        }
+        Q.push_back(i);
+ 
+    }
+    //Process the remaining elements 
+    for(;i<n;i++){
+        cout<<a[Q.front()]<<" ";
+ 
+        //1. Remove the elements which are not the part of the window(Contraction)
+        while((!Q.empty() && (Q.front()<=i-k))){
+            Q.pop_front();
+        }
+ 
+        //2. Remove the elements which are not useful and are in window
+        while(!Q.empty() && a[i]>=a[Q.back()]){
+            Q.pop_back();   
+        }
+ 
+        //3. Add the new elements(Expansion)
+        Q.push_back(i);
+    }
+ 
+    cout<<a[Q.front()];
+
+}
+
+int main(){
+  
+	int t;
+	cin >> t;
+	while(t>0) {
+		int n,k;
+    	cin >> n >> k;
+    	int i;
+    	int arr[n];
+    	for(i=0;i<n;i++)
+      		cin >> arr[i];
+    	printKMax(arr, n, k);
+        cout<<endl;
+    	t--;
+  	}
+  	return 0;
+}
+
