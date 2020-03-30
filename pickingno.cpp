@@ -29,18 +29,37 @@ vector<string> split(const string &);
 
 int pickingNumbers(vector<int> a) {
 
-   
-        int n = a.size();
-        vector<int> sol(100,0);
-//sort(a.begin(), a.end());
-            for(int i=0; i<n; i++)
-                {
-                    sol[a[i]]++;
+    int actualCount = 0;
+        int temp = 0;
+        for(int i =0;i<a.size();i++){
+            int A = a[i]+1;
+            int B = a[i]-1;
+            int C = a[i];
+            int count1 =0;
+            int count2 =0;
+            int count3 = 0;
+            for(int j =0;j<a.size();j++){
+             if(a[j] == A){
+                 count1++;
+             } 
+             if(a[j] == B){
+                 count2++;
+             }
+             if(a[j] == C){
+                 count3++;
+             }
+            
+                if((count1+count3) > (count2 + count3)){
+                    actualCount = count1+count3;
+                }else{
+                    actualCount = count2+count3;
                 }
-int pos = max_element(sol.begin(),sol.end()) - sol.begin();
-//cout<<sol[pos];
-return max(sol[pos+1]+sol[pos],sol[pos-1]+sol[pos]);
-
+            }
+            if(actualCount > temp){
+                temp = actualCount;
+            }
+        }
+        return temp;
 }
 
 int main()
