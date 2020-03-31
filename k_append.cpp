@@ -67,19 +67,23 @@ public:
        }
        cout<<temp->data;
    }
-   void append(int k)
+   void append(int k,int n)
    {
-       node* t = new node();
-       t = head;
-       for(int i=0;i<k;i++)
+      k = k%n;
+      if(k != 0)
        {
-           t= t->next;
+           node* t = new node();
+            t = head;
+                for(int i=0;i<k;i++)
+            {
+                    t= t->next;
+            }
+            node* temp = new node();
+            temp = t->next;
+            tail->next = head;
+            head = temp;
+            t->next = NULL;
        }
-       node* temp = new node();
-       temp = t->next;
-       tail->next = head;
-       head = temp;
-       t->next = NULL;
     }
 };
 
@@ -97,7 +101,7 @@ int main()
    //L.reverse();
    int k;
    cin>>k;
-   L.append(k);
+   L.append(k,n);
    L.display();
     return 0;
 }
