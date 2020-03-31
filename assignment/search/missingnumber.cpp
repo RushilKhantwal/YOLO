@@ -17,14 +17,15 @@ vector<int> missingNumbers(vector<int> arr, vector<int> brr) {
                         i++;
                     }
                 else {
-
-                            result.push_back(brr[j]);
-                    }
-              j++;
+                           
+                           if(!binary_search(result.begin(),result.end(),brr[j]))                        
+                                   result.push_back(brr[j]);
+                    } 
+              j++;     
             }
 
-
-    return result;
+           
+    return result;    
 }
 
 int main()
