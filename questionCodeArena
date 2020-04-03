@@ -1,0 +1,30 @@
+Chandan, our problem moderator, recently got a digital clock as a birthday present. A digital clock shows time in the format , where  represents hours , minutes, and seconds respectively. It is a  hour clock and so the day starts at  hours while it ends at .
+
+We all know how punctual and particular Chandan is about each and every second of his life. One sunny day, at his leisure, when he was fiddling with his clock, he discovered that a second was good for him if none of the  at that second was divisible by the same prime number, i.e. it is bad if all of them give 0 as a remainder when divided by the same prime number.
+
+Given a time of a day, Chandan now wants to count the number of good times and bad times from that instance till the end of the day .
+
+Input & Output:
+
+The first line of the input contains the number of test cases T. T test cases follow and each test contains a line HH MM SS, the time from which he wants to count till the end of that day.
+
+For each test case, output a ratio in the format "" (quotes for clarity), where G is the the number of good seconds and B is the number of bad seconds for Chandan. Express the ratio  in its lowest terms, i.e. it should not have any common factor.
+
+Constraints
+
+ ≤  < 
+ ≤  < 
+ ≤  < 
+
+SAMPLE INPUT 
+2
+23 59 58
+23 46 22
+SAMPLE OUTPUT 
+0:2
+1:408
+Explanation
+1) In the first case, there  is good because there is no prime number that leaves a remainder 0 when it divides all of them. Similarly  is also good. Hence the answer is 
+
+2) In the second case, there are two bad numbers,  (leaves remainder 0 when divided by ) and . There are  good numbers. Hence the answer is  => 
+
